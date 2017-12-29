@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <!-- 底部的按钮 -->
+
+  <LinearLayout
+      android:id="@+id/nav"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_alignParentBottom="true"
+      android:background="#777"
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      >
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/album"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:src="@drawable/ic_album"
+        android:layout_marginLeft="16dip"
+        />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/camera"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:src="@drawable/ic_camera"
+        android:layout_marginLeft="16dip"
+        />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/send"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:src="@drawable/ic_send"
+        android:layout_marginLeft="16dip"
+        />
+  </LinearLayout>
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fillViewport="true"
+      android:layout_above="@+id/nav"
+      >
+    <io.hxq.editor.RichTextEditor
+        android:id="@+id/editor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        />
+  </ScrollView>
+
+
+</RelativeLayout>
