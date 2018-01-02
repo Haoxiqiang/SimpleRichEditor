@@ -2,7 +2,6 @@ package io.hxq.editor;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatEditText;
 import android.text.Layout;
 import android.util.AttributeSet;
@@ -11,21 +10,22 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 
-public class LineSpaceExtraCompatEditView extends AppCompatEditText implements IGetLineSpaceExtra {
+public class DelegateEditText extends AppCompatEditText implements IGetLineSpaceExtra {
 
-  private static final String TAG = LineSpaceExtraCompatEditView.class.getSimpleName();
   private Rect mRect;
 
-  public LineSpaceExtraCompatEditView(Context context) {
-    this(context, null);
+  public DelegateEditText(Context context) {
+    super(context);
+    mRect = new Rect();
   }
 
-  public LineSpaceExtraCompatEditView(Context context, @Nullable AttributeSet attrs) {
-    this(context, attrs, 0);
+  public DelegateEditText(Context context, AttributeSet attrs) {
+    super(context, attrs);
+    mRect = new Rect();
   }
 
-  public LineSpaceExtraCompatEditView(Context context, AttributeSet attrs, int defStyleAttr) {
-    super(context, attrs, defStyleAttr);
+  public DelegateEditText(Context context, AttributeSet attrs, int defStyle) {
+    super(context, attrs, defStyle);
     mRect = new Rect();
   }
 
@@ -34,10 +34,10 @@ public class LineSpaceExtraCompatEditView extends AppCompatEditText implements I
   }
 
   @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
-    if (keyCode == KeyEvent.KEYCODE_ENTER) {
-      // Just ignore the [Enter] key
-      return true;
-    }
+    //if (keyCode == KeyEvent.KEYCODE_ENTER) {
+    //  // Just ignore the [Enter] key
+    //  return true;
+    //}
     // Handle all other keys in the default way
     return super.onKeyDown(keyCode, event);
   }

@@ -7,7 +7,7 @@
 
 <!--</io.hxq.editor.LineSpaceExtraContainer>-->
 
-<io.hxq.editor.DeletableEditText
+<io.hxq.editor.DelegateEditText
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/editor"
     android:layout_width="match_parent"
@@ -19,4 +19,4 @@
     android:textCursorDrawable="@drawable/cursor_shape"
     >
 
-</io.hxq.editor.DeletableEditText>
+</io.hxq.editor.DelegateEditText>

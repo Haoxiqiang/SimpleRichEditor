@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name">SimpleRichEditor</string>
+  <string name="title_activity_board">BoardActivity</string>
 </resources>
